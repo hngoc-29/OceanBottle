@@ -29,7 +29,7 @@ export const mdxComponents = {
 
     p: ({ className = "", ...props }: any) => (
         <p
-            className={`leading-7 mt-3 ${className}`}
+            className={`leading-7 mt-3 break-words ${className}`}
             {...props}
         />
     ),
@@ -70,7 +70,7 @@ export const mdxComponents = {
 
     code: ({ className = "", ...props }: any) => (
         <code
-            className={`bg-black/40 text-emerald-300 px-1 py-0.5 rounded text-sm ${className}`}
+            className={`bg-black/40 text-emerald-300 px-1 py-0.5 rounded text-sm break-all ${className}`}
             {...props}
         />
     ),

@@ -53,6 +53,7 @@ export default function MessageDialog({ children, message }: any) {
                 rounded-lg 
                 p-4 
                 backdrop-blur-md
+                break-words
                 ">
 
                     <MessageViewer content={message} />
