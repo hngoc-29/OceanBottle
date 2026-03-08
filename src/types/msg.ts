@@ -1,24 +1,40 @@
+import type { EncryptedPayload } from "./encrypt"
+
+// Sky theme
 export type SkyType =
     | "day"
     | "sunset"
     | "night"
     | "storm"
 
-export type BottleAnim =
+// Bottle animation style
+export type BottleAnimation =
     | "float"
     | "slow"
     | "drift"
 
-export type MessageOptions = {
-    w?: number        // wave strength
-    s?: SkyType       // sky theme
-    a?: BottleAnim    // bottle animation
+// Visual options for rendering message
+export interface MessageOptions {
+    waveStrength?: number        // ocean wave strength
+    sky?: SkyType                // sky theme
+    bottleAnimation?: BottleAnimation
 }
 
-export type MessageData = {
-    v: number        // version
-    c: string        // MDX content
-    t: number        // created timestamp
-    e?: number | 0   // expire timestamp
-    o?: MessageOptions
+// Message data stored in bottle
+export interface MessageData {
+    version: number              // schema version
+    content: string              // MDX content
+    createdAt: number            // timestamp created
+    expireAt?: number            // timestamp expire (optional)
+    options?: MessageOptions     // visual options
 }
+
+export type BottleMessage =
+    | {
+        encrypted: false
+        data: MessageData
+    }
+    | {
+        encrypted: true
+        data: EncryptedPayload
+    }

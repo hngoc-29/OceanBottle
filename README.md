@@ -1,75 +1,136 @@
-# React + TypeScript + Vite
+# 🌊 OceanBottle
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**OceanBottle** là một web app cho phép bạn gửi **thông điệp bí mật trong chai** giống như thả thư ra đại dương 🌊🍾.
 
-Currently, two official plugins are available:
+Bạn viết tin nhắn → hệ thống tạo **một link chia sẻ** → người khác mở link sẽ thấy **chai trôi trên biển** và mở ra để đọc thông điệp.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+# ✨ Features
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- 🍾 Message in a Bottle – gửi tin nhắn bằng link
+- 🔐 Password Protection – có thể đặt mật khẩu cho tin nhắn
+- 🔒 Client-side Encryption – mã hóa ngay trên trình duyệt
+- 📱 QR Code Sharing – tạo QR code để chia sẻ
+- 🌊 Ocean UI – giao diện đại dương với animation
+- ⚡ Fast & Lightweight – chạy hoàn toàn phía client
 
-Note: This will impact Vite dev & build performances.
+---
 
-## Expanding the ESLint configuration
+# 🛠 Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Frontend
+- React 19
+- Vite
+- React Router
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### UI
+- TailwindCSS
+- shadcn/ui
+- Radix UI
+- Framer Motion
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Other
+- QRCode
+- MDX
+- Geist Font
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+# 📦 Installation
+
+Clone project:
+
+```bash
+git clone https://github.com/your-username/oceanbottle.git
+cd oceanbottle
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Install dependencies:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+Run development server:
+
+```bash
+npm run dev
+```
+
+App sẽ chạy tại:
+
+```
+http://localhost:5173
+```
+
+---
+
+# 🚀 Build Production
+
+Build project:
+
+```bash
+npm run build
+```
+
+Preview build:
+
+```bash
+npm run preview
+```
+
+---
+
+# 📁 Project Structure
+
+```
+src
+ ├── components
+ │   ├── ocean
+ │   ├── bottle
+ │   ├── ui
+ │
+ ├── crypto
+ │   ├── message.ts
+ │   ├── key.ts
+ │
+ ├── pages
+ │   ├── home
+ │   ├── viewer
+ │
+ ├── utils
+ │   ├── base64.ts
+ │   ├── url.ts
+ │
+ └── main.tsx
+```
+
+---
+
+# 🔐 Security
+
+- Tin nhắn được **mã hóa bằng Web Crypto API**
+- Không có backend lưu dữ liệu
+- Dữ liệu nằm trong **URL**
+
+Điều này có nghĩa là:
+
+- Không ai (kể cả server) có thể đọc nội dung
+- Chỉ người có **link + password** mới mở được
+
+---
+
+# 🌊 Inspiration
+
+Ý tưởng dựa trên concept:
+
+> Message in a Bottle – gửi thông điệp ra đại dương và chờ ai đó tìm thấy.
+
+OceanBottle biến ý tưởng này thành một trải nghiệm web tương tác.
+
+---
+
+# 📜 License
+
+MIT License

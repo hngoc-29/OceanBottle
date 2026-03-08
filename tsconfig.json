@@ -9,7 +9,8 @@
     }
   ],
   "compilerOptions": {
-    "baseUrl": ".",
+    "composite": true,
+    "moduleResolution": "bundler", // Bắt buộc để dùng paths mà không cần baseUrl
     "paths": {
       "@/*": [
         "./src/*"

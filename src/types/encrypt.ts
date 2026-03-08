@@ -3,3 +3,4 @@ export type EncryptedPayload = {
     iv: string // initialization vector
     s: string  // salt
 }
+
